@@ -1,12 +1,12 @@
 const PRODUCT_MODE_SERVER = true;
-const SERVER_DOMAIN = PRODUCT_MODE_SERVER ? `zc529ea05-z8fbd60c3-gtw.qovery.io` : '192.168.109.71';
-const SERVER_PORT = 443;
+const SERVER_DOMAIN = PRODUCT_MODE_SERVER ? `13.37.177.37` : '192.168.109.71';
+const SERVER_PORT = 3333;
 // const SERVER_DOMAIN = `appconnect.asbeda-int.akadns.net`;
 // const SERVER_PORT = 80;
 
 const PEER_PATH = `/yesname-peer`;
 
-const SERVER_HOST = `https://zc529ea05-z8fbd60c3-gtw.qovery.io:${SERVER_PORT}`;
+const SERVER_HOST = `http://13.37.177.37:${SERVER_PORT}`;
 
 const AVATAR_DEF_BACK = ["#adf0d1", "#06c4c5", "#f57268"];
 
