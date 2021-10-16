@@ -15,7 +15,6 @@ import PhotoEditor from 'react-native-photo-editor';
 import PhotoEditSDK from "react-native-photoedit-sdk";
 import { connect } from "react-redux";
 import styles from "./styles";
-import ScreenBrightness from 'react-native-screen-brightness';
 
 const { ApiActions, logger } = reduxActions;
 const _WIDTH = getDeviceWidth();
@@ -56,28 +55,7 @@ class CustomCamera extends Component {
     this.camera_type = this.params?.type || CAMERATYPE.EDITCAMERA;
   }
   componentDidMount() {
-    if (Platform.OS == "android") {
-
-      ScreenBrightness.hasPermission()
-        .then(res => {
-          console.log(res);
-          if (!res) {
-            ScreenBrightness.requestPermission();
-          }
-          this.initialBritness();
-        })
-        .catch(err => {
-          logger.error(err);
-        })
-    } else {
-      this.initialBritness();
-    }
     AppState.addEventListener("change", this.handleAppStateChange);
-  }
-  initialBritness() {
-    ScreenBrightness.getBrightness().then(brightness => {
-      this.brightness = brightness;
-    });
   }
   componentWillUnmount() {
     try {
@@ -118,7 +96,6 @@ class CustomCamera extends Component {
   }
   frontFlash(isOn, callback) {
     if (this.unvisibleFrontFlash) return;
-    ScreenBrightness.setBrightness(isOn ? 255 : this.brightness);
     this.setState({ visibleWhite: isOn }, () => {
       setTimeout(() => {
         callback?.()

@@ -1,8 +1,8 @@
 const PRODUCT_MODE_SERVER = true;
 const SERVER_DOMAIN = PRODUCT_MODE_SERVER ? `13.37.177.37` : '192.168.109.71';
-const SERVER_PORT = 3333;
+// const SERVER_PORT = 3333;
 // const SERVER_DOMAIN = `appconnect.asbeda-int.akadns.net`;
-// const SERVER_PORT = 80;
+const SERVER_PORT = 80;
 
 const PEER_PATH = `/yesname-peer`;
 
