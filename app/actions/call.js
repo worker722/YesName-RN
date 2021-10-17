@@ -18,8 +18,8 @@ import * as logger from "./logger";
 let peerServer = null;
 
 export const initPeer = () => {
-    // peerServer = new Peer();
-    peerServer = new Peer(null, BaseConfig.PEERCONFIG);
+    peerServer = new Peer();
+    // peerServer = new Peer(null, BaseConfig.PEERCONFIG);
     peerServer.on('error', (err) => { global.mypeerid = null; logger.error("peer err", err) })
     peerServer.on('disconnected', (res) => {
         setTimeout(() => {

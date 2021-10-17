@@ -9,7 +9,8 @@ class SocketManager {
     if (SocketManager.instance)
       return SocketManager.instance;
     SocketManager.instance = this;
-    this.socket = io.connect(Sockets.SOCKET_IO_SERVER);
+    alert(Sockets.SOCKET_IO_SERVER);
+    this.socket = io(Sockets.SOCKET_IO_SERVER, { path: Sockets.SOCKET_IO_PATH });
     this.setupListenDefaultEvents();
     return this;
   }

@@ -1,12 +1,11 @@
 const PRODUCT_MODE_SERVER = true;
-const SERVER_DOMAIN = PRODUCT_MODE_SERVER ? `13.37.177.37` : '192.168.109.71';
-// const SERVER_PORT = 3333;
-// const SERVER_DOMAIN = `appconnect.asbeda-int.akadns.net`;
-const SERVER_PORT = 80;
+const SERVER_IP = PRODUCT_MODE_SERVER ? `13.37.177.37` : '192.168.107.160';
+const SERVER_PORT = PRODUCT_MODE_SERVER ? 80 : 3333;
+const PATH = PRODUCT_MODE_SERVER ? "/api" : "";
+const PEER_PATH =  `${PATH}/yesname-peer`;
 
-const PEER_PATH = `/yesname-peer`;
-
-const SERVER_HOST = `http://13.37.177.37:${SERVER_PORT}`;
+const SERVER_URL = `http://${SERVER_IP}:${SERVER_PORT}`;
+const SERVER_HOST = `${SERVER_URL}${PATH}`;
 
 const AVATAR_DEF_BACK = ["#adf0d1", "#06c4c5", "#f57268"];
 
@@ -68,7 +67,7 @@ const INVITEPAGETYPE = {
 }
 const MISSED_CALL_TIME = 20000; //milesecond
 const PEERCONFIG = {
-  host: SERVER_DOMAIN,
+  host: SERVER_IP,
   secure: false,
   port: SERVER_PORT,
   path: PEER_PATH
@@ -83,6 +82,7 @@ const MUTE_KEY = "mute";
 
 export {
   PRODUCT_MODE_SERVER,
+  SERVER_URL,
   SERVER_HOST,
   AVATAR_DEF_BACK,
   TABBAR_HEIGHT,

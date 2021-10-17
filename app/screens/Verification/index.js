@@ -76,7 +76,7 @@ class Verification extends Component {
           <Image source={Images.logo} style={styles.logo} />
           <View style={{ marginVertical: 30 }}>
             <Text whiteColor header bold>{"Verification"}</Text>
-            <Text>Verification code 1234</Text>
+            <Text whiteColor>Verification code 1234</Text>
           </View>
         </View>
         <View style={styles.bottomContainer}>

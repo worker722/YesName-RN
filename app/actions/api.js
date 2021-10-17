@@ -10,7 +10,7 @@ const _CURRENTSECURITY = () => {
 const _REQUEST2SERVER = (url, params = null, isFormdata = false) => {
     const isGet = (params == null);
     return new Promise(function (resolve, reject) {
-        fetch(`${BaseConfig.SERVER_HOST}/api/v1/${url}`, {
+        fetch(`${BaseConfig.SERVER_HOST}/app/${url}`, {
             method: isFormdata ? "post" : isGet ? 'get' : 'post',
             headers: {
                 'content-type': isFormdata ? 'multipart/form-data' : 'application/json'
